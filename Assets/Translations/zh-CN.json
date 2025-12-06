@@ -58,6 +58,14 @@
         "low-battery-threshold": {
           "description": "当电量低于此百分比时显示警告。",
           "label": "低电量警告阈值"
+        },
+        "show-noctalia-performance": {
+          "description": "在电池面板中显示 Noctalia 性能模式切换。",
+          "label": "显示 Noctalia 性能切换"
+        },
+        "show-power-profile": {
+          "description": "在电池面板中显示电源配置文件选择。",
+          "label": "显示电源配置文件控件"
         }
       },
       "brightness": {
@@ -131,10 +139,21 @@
           "label": "显示命令输出",
           "stream-description": "输入一个要持续运行的命令。"
         },
+        "hide-mode": {
+          "description": "控制命令无输出时小部件的可见性。",
+          "label": "隐藏模式",
+          "expandWithOutput": "有输出时展开",
+          "alwaysExpanded": "始终展开",
+          "maxTransparent": "最大展开但透明"
+        },
         "dynamic-text": "动态文本",
         "icon": {
           "description": "从库中选择图标。",
           "label": "图标"
+        },
+        "show-icon": {
+          "description": "切换小部件图标的可见性。",
+          "label": "显示图标"
         },
         "left-click": {
           "description": "左键点击按钮时执行的命令。",
@@ -372,20 +391,20 @@
   "battery": {
     "battery-level": "电池电量",
     "brightness": "亮度",
-    "charging": "正在充电。",
-    "charging-rate": "充电速率：{rate} W。",
-    "discharging": "正在放电。",
-    "discharging-rate": "放电速率：{rate} W。",
+    "charging": "正在充电",
+    "charging-rate": "充电速率：{rate} W",
+    "discharging": "正在放电",
+    "discharging-rate": "放电速率：{rate} W",
     "health": "健康状况：{percent}%",
-    "idle": "空闲。",
+    "idle": "空闲",
     "inhibit-idle-description": "保持系统唤醒。",
     "inhibit-idle-label": "保持唤醒",
-    "no-battery-detected": "未检测到电池。",
+    "no-battery-detected": "未检测到电池",
     "panel-title": "电池",
-    "plugged-in": "已接通电源。",
+    "plugged-in": "已接通电源",
     "power-profile": "电源模式",
-    "time-left": "剩余时间：{time}。",
-    "time-until-full": "充满所需时间：{time}。"
+    "time-left": "剩余时间：{time}",
+    "time-until-full": "充满所需时间：{time}"
   },
   "bluetooth": {
     "panel": {
@@ -453,6 +472,14 @@
   },
   "clock": {
     "tooltip": "打开日历"
+  },
+  "common": {
+    "add": "添加",
+    "apply": "应用",
+    "cancel": "取消",
+    "check-settings": "查看设置了解详情",
+    "close": "关闭",
+    "save": "保存"
   },
   "context-menu": {
     "activate-app": "激活 {app}",
@@ -970,7 +997,7 @@
       },
       "widgets": {
         "section": {
-          "description": "拖放小部件以重新排序。徽章表示使用情况：[L]左、[C]中、[R]右。",
+          "description": "拖动小部件以更改它们的顺序。使用右键菜单在各部分之间转移小部件或移除它们。",
           "label": "小部件定位"
         }
       }
@@ -1229,7 +1256,7 @@
           "cancel": "取消"
         },
         "section": {
-          "description": "配置和管理快捷方式小部件。",
+          "description": "拖动小部件以更改其顺序。使用右键菜单在各部分之间转移小部件或将其移除。",
           "label": "快捷方式小部件"
         },
         "sectionLeft": "左",
@@ -1478,6 +1505,10 @@
         "grid-view": {
           "description": "以网格布局而非列表显示项目。",
           "label": "网格视图"
+        },
+        "show-categories": {
+          "description": "显示用于筛选应用程序的类别标签。",
+          "label": "显示类别"
         },
         "position": {
           "description": "选择启动器面板出现的位置。",
@@ -1733,7 +1764,7 @@
           "label": "锁定键"
         },
         "section": {
-          "description": "选择触发OSD的事件。如果未选择任何事件，则所有可用事件都将触发OSD。",
+          "description": "选择触发OSD的事件。",
           "label": "OSD触发事件"
         },
         "volume": {
@@ -1741,6 +1772,75 @@
           "label": "输出音量"
         }
       }
+    },
+    "plugins": {
+      "available": {
+        "description": "浏览并安装来自已配置源的插件。",
+        "label": "可用插件",
+        "no-plugins-description": "检查你的插件源或刷新列表。",
+        "no-plugins-label": "没有可用的插件"
+      },
+      "filter": {
+        "all": "全部",
+        "downloaded": "已下载",
+        "not-downloaded": "未下载"
+      },
+      "install": "安装",
+      "install-error": "安装失败：{error}",
+      "install-success": "成功安装 {plugin}",
+      "installed": {
+        "description": "管理和配置所有本地安装的插件。",
+        "label": "已安装插件",
+        "no-plugins-description": "从下方“可用插件”部分安装插件。",
+        "no-plugins-label": "未安装插件"
+      },
+      "installing": "正在安装 {plugin}...",
+      "plugin-settings-title": "{插件} 设置",
+      "refresh": {
+        "refreshing": "正在刷新插件列表...",
+        "tooltip": "刷新可用插件"
+      },
+      "settings": {
+        "tooltip": "插件设置"
+      },
+      "settings-error-not-loaded": "插件未加载",
+      "settings-saved": "插件设置已保存",
+      "sources": {
+        "add-custom": "添加自定义存储库",
+        "add-dialog": {
+          "description": "添加一个 GitHub 仓库作为插件源。",
+          "error": "无法添加插件源",
+          "name": "仓库名称",
+          "name-placeholder": "我的自定义插件",
+          "success": "插件源添加成功",
+          "title": "添加插件源",
+          "url": "仓库 URL"
+        },
+        "description": "管理插件仓库，插件从这些仓库下载。",
+        "label": "插件源",
+        "placeholder": "我的酷仓库",
+        "remove": {
+          "tooltip": "移除插件源"
+        }
+      },
+      "title": "插件",
+      "uninstall": "卸载",
+      "uninstall-dialog": {
+        "description": "你确定要卸载 {plugin} 吗？ 这将移除所有插件数据。",
+        "title": "卸载插件"
+      },
+      "uninstall-error": "卸载失败：{error}",
+      "uninstall-success": "成功卸载 {plugin}",
+      "uninstalling": "正在卸载 {plugin}...",
+      "update": "更新",
+      "update-all": "全部更新（{count}）",
+      "update-all-success": "所有插件已成功更新",
+      "update-available": "有{count}个插件可更新",
+      "update-error": "更新插件失败：{plugin}：{error}",
+      "update-incompatible": "需要 Noctalia v{version} 或更高版本",
+      "update-success": "已将 {plugin} 更新至 v{version}",
+      "update-version": "v{当前} → v{新}",
+      "updating": "正在更新 {plugin}..."
     },
     "screen-recorder": {
       "audio": {
@@ -2187,7 +2287,7 @@
     "noctalia-performance": {
       "disabled": "性能模式已禁用",
       "enabled": "已启用性能模式",
-      "label": "夜之颂演出"
+      "label": "Noctalia 性能"
     },
     "power-profile": {
       "changed": "电源模式已更改",

@@ -19,6 +19,7 @@ import qs.Modules.Panels.Clock
 import qs.Modules.Panels.ControlCenter
 import qs.Modules.Panels.Launcher
 import qs.Modules.Panels.NotificationHistory
+import qs.Modules.Panels.Plugins
 import qs.Modules.Panels.SessionMenu
 import qs.Modules.Panels.Settings
 import qs.Modules.Panels.SetupWizard
@@ -50,6 +51,8 @@ PanelWindow {
   readonly property alias trayDrawerPanel: trayDrawerPanel
   readonly property alias wallpaperPanel: wallpaperPanel
   readonly property alias wifiPanel: wifiPanel
+  readonly property alias pluginPanel1: pluginPanel1
+  readonly property alias pluginPanel2: pluginPanel2
 
   // Expose panel backgrounds for AllBackgrounds
   readonly property var audioPanelPlaceholder: audioPanel.panelRegion
@@ -67,6 +70,8 @@ PanelWindow {
   readonly property var trayDrawerPanelPlaceholder: trayDrawerPanel.panelRegion
   readonly property var wallpaperPanelPlaceholder: wallpaperPanel.panelRegion
   readonly property var wifiPanelPlaceholder: wifiPanel.panelRegion
+  readonly property var pluginPanel1Placeholder: pluginPanel1.panelRegion
+  readonly property var pluginPanel2Placeholder: pluginPanel2.panelRegion
 
   Component.onCompleted: {
     Logger.d("MainScreen", "Initialized for screen:", screen?.name, "- Dimensions:", screen?.width, "x", screen?.height, "- Position:", screen?.x, ",", screen?.y);
@@ -202,105 +207,107 @@ PanelWindow {
       id: audioPanel
       objectName: "audioPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     BatteryPanel {
       id: batteryPanel
       objectName: "batteryPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     BluetoothPanel {
       id: bluetoothPanel
       objectName: "bluetoothPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     BrightnessPanel {
       id: brightnessPanel
       objectName: "brightnessPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     ControlCenterPanel {
       id: controlCenterPanel
       objectName: "controlCenterPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     ChangelogPanel {
       id: changelogPanel
       objectName: "changelogPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     ClockPanel {
       id: clockPanel
       objectName: "clockPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     Launcher {
       id: launcherPanel
       objectName: "launcherPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     NotificationHistoryPanel {
       id: notificationHistoryPanel
       objectName: "notificationHistoryPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     SessionMenu {
       id: sessionMenuPanel
       objectName: "sessionMenuPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     SettingsPanel {
       id: settingsPanel
       objectName: "settingsPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     SetupWizard {
       id: setupWizardPanel
       objectName: "setupWizardPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     TrayDrawerPanel {
       id: trayDrawerPanel
       objectName: "trayDrawerPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     WallpaperPanel {
       id: wallpaperPanel
       objectName: "wallpaperPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
     }
 
     WiFiPanel {
       id: wifiPanel
       objectName: "wifiPanel-" + (root.screen?.name || "unknown")
       screen: root.screen
-      z: 50
+    }
+
+    // ----------------------------------------------
+    // Plugin panel slots
+    // ----------------------------------------------
+    PluginPanelSlot {
+      id: pluginPanel1
+      objectName: "pluginPanel1-" + (root.screen?.name || "unknown")
+      screen: root.screen
+      slotNumber: 1
+    }
+
+    PluginPanelSlot {
+      id: pluginPanel2
+      objectName: "pluginPanel2-" + (root.screen?.name || "unknown")
+      screen: root.screen
+      slotNumber: 2
     }
 
     // ----------------------------------------------
@@ -411,7 +418,7 @@ PanelWindow {
   // Centralized Keyboard Shortcuts
   // ========================================
   // These shortcuts delegate to the opened panel's handler functions
-  // Panels can implement: onEscapePressed, onTabPressed, onShiftTabPressed,
+  // Panels can implement: onEscapePressed, onTabPressed, onBackTabPressed,
   // onUpPressed, onDownPressed, onReturnPressed
 
   Shortcut {
@@ -437,11 +444,11 @@ PanelWindow {
   }
 
   Shortcut {
-    sequence: "Shift+Tab"
+    sequence: "Backtab"
     enabled: root.isPanelOpen
     onActivated: {
-      if (PanelService.openedPanel && PanelService.openedPanel.onShiftTabPressed) {
-        PanelService.openedPanel.onShiftTabPressed();
+      if (PanelService.openedPanel && PanelService.openedPanel.onBackTabPressed) {
+        PanelService.openedPanel.onBackTabPressed();
       }
     }
   }
@@ -532,16 +539,6 @@ PanelWindow {
     onActivated: {
       if (PanelService.openedPanel && PanelService.openedPanel.onPageDownPressed) {
         PanelService.openedPanel.onPageDownPressed();
-      }
-    }
-  }
-
-  Shortcut {
-    sequence: "Backtab"
-    enabled: root.isPanelOpen
-    onActivated: {
-      if (PanelService.openedPanel && PanelService.openedPanel.onBackTabPressed) {
-        PanelService.openedPanel.onBackTabPressed();
       }
     }
   }

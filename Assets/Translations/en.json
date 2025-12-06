@@ -58,6 +58,14 @@
         "low-battery-threshold": {
           "description": "Show a warning when battery falls below this percentage.",
           "label": "Low battery warning threshold"
+        },
+        "show-noctalia-performance": {
+          "description": "Display the Noctalia Performance Mode toggle inside the battery panel.",
+          "label": "Show Noctalia Performance toggle"
+        },
+        "show-power-profile": {
+          "description": "Display the power profile selection inside the battery panel.",
+          "label": "Show power profile controls"
         }
       },
       "brightness": {
@@ -131,10 +139,21 @@
           "label": "Display command output",
           "stream-description": "Enter a command to run continuously."
         },
+        "hide-mode": {
+          "description": "Controls widget visibility when the command has no output.",
+          "label": "Hide mode",
+          "expandWithOutput": "Expand when has output",
+          "alwaysExpanded": "Always expanded",
+          "maxTransparent": "Max expanded but transparent"
+        },
         "dynamic-text": "Dynamic text",
         "icon": {
           "description": "Select an icon from the library.",
           "label": "Icon"
+        },
+        "show-icon": {
+          "description": "Toggles the visibility of the widget's icon.",
+          "label": "Show icon"
         },
         "left-click": {
           "description": "Command to execute when the button is left-clicked.",
@@ -453,6 +472,14 @@
   },
   "clock": {
     "tooltip": "Clock"
+  },
+  "common": {
+    "add": "Add",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "check-settings": "Check Settings for details",
+    "close": "Close",
+    "save": "Save"
   },
   "context-menu": {
     "activate-app": "Activate {app}",
@@ -925,7 +952,7 @@
           "label": "Bar density"
         },
         "floating": {
-          "description": "Displays the bar as a floating 'pill'.",
+          "description": "Display the bar as a floating 'pill'.",
           "label": "Floating bar"
         },
         "margins": {
@@ -935,7 +962,7 @@
           "vertical": "Vertical"
         },
         "outer-corners": {
-          "description": "Displays outwardly curved corners on the bar.",
+          "description": "Display outwardly curved corners on the bar.",
           "label": "Outer corners"
         },
         "position": {
@@ -970,7 +997,7 @@
       },
       "widgets": {
         "section": {
-          "description": "Drag and drop widgets to reorder them. Badges indicate usage: [L]eft, [C]enter, [R]ight.",
+          "description": "Drag widgets to change their order. Use the right-click menu to transfer widgets between sections or remove them.",
           "label": "Widgets positioning"
         }
       }
@@ -1229,7 +1256,7 @@
           "cancel": "Cancel"
         },
         "section": {
-          "description": "Configure and manage the shortcuts widgets.",
+          "description": "Drag widgets to change their order. Use the right-click menu to transfer widgets between sections or remove them.",
           "label": "Shortcuts widgets"
         },
         "sectionLeft": "Left",
@@ -1479,6 +1506,10 @@
           "description": "Display items in a grid layout instead of a list.",
           "label": "Grid view"
         },
+        "show-categories": {
+          "description": "Show category tabs for filtering applications.",
+          "label": "Show categories"
+        },
         "position": {
           "description": "Choose where the launcher panel appears.",
           "label": "Position"
@@ -1519,7 +1550,7 @@
       },
       "date-time": {
         "12hour-format": {
-          "description": "Displays time in 12-hour format on the lock screen and calendar. The bar clock has its own settings.",
+          "description": "Display time in 12-hour format on the lock screen and calendar. The bar clock has its own settings.",
           "label": "Use 12-hour time format"
         },
         "first-day-of-week": {
@@ -1540,7 +1571,7 @@
           "label": "Use analog style clock"
         },
         "week-numbers": {
-          "description": "Displays the week of the year (e.g., week 38) in the calendar.",
+          "description": "Display the week of the year (e.g., week 38) in the calendar.",
           "label": "Show week numbers"
         }
       },
@@ -1570,7 +1601,7 @@
           "label": "Weather"
         },
         "show-effects": {
-          "description": "Shows additional visual effects (like rain, snow, or lightning) on the weather card.",
+          "description": "Show additional visual effects (like rain, snow, or lightning) on the weather card.",
           "label": "Display weather effects"
         },
         "show-in-calendar": {
@@ -1733,7 +1764,7 @@
           "label": "Lock keys"
         },
         "section": {
-          "description": "Select the events that trigger the OSD. If no events are selected, all available events will trigger the OSD.",
+          "description": "Select the events that trigger the OSD.",
           "label": "OSD trigger events"
         },
         "volume": {
@@ -1741,6 +1772,76 @@
           "label": "Output volume"
         }
       }
+    },
+    "plugins": {
+      "available": {
+        "description": "Browse and install plugins from configured sources.",
+        "label": "Available plugins",
+        "no-plugins-description": "Check your plugin sources or refresh the list.",
+        "no-plugins-label": "No plugins available"
+      },
+      "filter": {
+        "all": "All",
+        "downloaded": "Downloaded",
+        "not-downloaded": "Not Downloaded"
+      },
+      "install": "Install",
+      "install-error": "Failed to install: {error}",
+      "install-success": "Successfully installed {plugin}",
+      "installed": {
+        "description": "Manage and configure all locally installed plugins.",
+        "label": "Installed plugins",
+        "no-plugins-description": "Install plugins from the Available Plugins section below.",
+        "no-plugins-label": "No plugins installed"
+      },
+      "installing": "Installing {plugin}...",
+      "plugin-settings-title": "{plugin} Settings",
+      "refresh": {
+        "refreshing": "Refreshing plugins list...",
+        "tooltip": "Refresh available plugins"
+      },
+      "settings": {
+        "tooltip": "Plugin settings"
+      },
+      "settings-error-not-loaded": "Plugin not loaded",
+      "settings-saved": "Plugin settings saved",
+      "sources": {
+        "add-custom": "Add custom repository",
+        "add-dialog": {
+          "description": "Add a GitHub repository as a plugin source.",
+          "error": "Failed to add plugin source",
+          "name": "Repository name",
+          "name-placeholder": "My Custom Plugins",
+          "success": "Plugin source added successfully",
+          "title": "Add plugin source",
+          "url": "Repository URL"
+        },
+        "description": "Manage plugin repositories where plugins are downloaded from.",
+        "label": "Plugin sources",
+        "placeholder": "My cool repository",
+        "remove": {
+          "tooltip": "Remove plugin source"
+        }
+      },
+      "title": "Plugins",
+      "uninstall": "Uninstall",
+      "uninstall-dialog": {
+        "description": "Are you sure you want to uninstall {plugin}? This will remove all plugin data.",
+        "title": "Uninstall plugin"
+      },
+      "uninstall-error": "Failed to uninstall: {error}",
+      "uninstall-success": "Successfully uninstalled {plugin}",
+      "uninstall.tooltip": "Uninstall plugin",
+      "uninstalling": "Uninstalling {plugin}...",
+      "update": "Update",
+      "update-all": "Update All ({count})",
+      "update-all-success": "All plugins updated successfully",
+      "update-available": "{count} plugins update(s) available",
+      "update-error": "Failed to update plugin: {plugin}: {error}",
+      "update-incompatible": "Requires Noctalia v{version} or higher",
+      "update-success": "Updated {plugin} to v{version}",
+      "update-version": "v{current} → v{new}",
+      "updating": "Updating {plugin}..."
     },
     "screen-recorder": {
       "audio": {
@@ -2187,7 +2288,7 @@
     "noctalia-performance": {
       "disabled": "Performance mode disabled",
       "enabled": "Performance mode enabled",
-      "label": "Noctalia performance"
+      "label": "Noctalia Performance"
     },
     "power-profile": {
       "changed": "Power profile changed",
@@ -2263,8 +2364,8 @@
     "night-light-enabled": "Night Light",
     "night-light-forced": "Night Light",
     "night-light-not-installed": "Night Light (not available)",
-    "noctalia-performance-disabled": "Noctalia performance mode",
-    "noctalia-performance-enabled": "Noctalia performance mode",
+    "noctalia-performance-disabled": "Noctalia Performance Mode",
+    "noctalia-performance-enabled": "Noctalia Performance Mode",
     "open-control-center": "Control center",
     "open-notification-history-disable-dnd": "Notification history",
     "open-notification-history-enable-dnd": "Notification history",

@@ -58,6 +58,14 @@
         "low-battery-threshold": {
           "description": "Afficher un avertissement lorsque la batterie tombe en dessous de ce pourcentage.",
           "label": "Seuil d'avertissement de batterie faible"
+        },
+        "show-noctalia-performance": {
+          "description": "Afficher le basculement du mode performance Noctalia dans le panneau batterie.",
+          "label": "Afficher le basculement Noctalia Performance"
+        },
+        "show-power-profile": {
+          "description": "Afficher la sélection du profil d'alimentation dans le panneau batterie.",
+          "label": "Afficher les contrôles de profil d'alimentation"
         }
       },
       "brightness": {
@@ -131,10 +139,21 @@
           "label": "Afficher la sortie de la commande",
           "stream-description": "Entrez une commande à exécuter en continu."
         },
+        "hide-mode": {
+          "description": "Contrôle la visibilité du widget quand la commande n'a pas de sortie.",
+          "label": "Mode masqué",
+          "expandWithOutput": "Étendre quand il y a une sortie",
+          "alwaysExpanded": "Toujours étendu",
+          "maxTransparent": "Étendu au maximum mais transparent"
+        },
         "dynamic-text": "Texte dynamique",
         "icon": {
           "description": "Sélectionnez une icône dans la bibliothèque.",
           "label": "Icône"
+        },
+        "show-icon": {
+          "description": "Bascule la visibilité de l'icône du widget.",
+          "label": "Afficher l'icône"
         },
         "left-click": {
           "description": "Commande à exécuter quand le bouton est cliqué à gauche.",
@@ -372,20 +391,20 @@
   "battery": {
     "battery-level": "Niveau de batterie",
     "brightness": "Luminosité",
-    "charging": "En charge.",
-    "charging-rate": "Taux de charge : {rate} W.",
-    "discharging": "En décharge.",
-    "discharging-rate": "Taux de décharge : {rate} W.",
+    "charging": "En charge",
+    "charging-rate": "Taux de charge : {rate} W",
+    "discharging": "En décharge",
+    "discharging-rate": "Taux de décharge : {rate} W",
     "health": "État : {percent}%",
-    "idle": "Inactif.",
+    "idle": "Inactif",
     "inhibit-idle-description": "Maintient le système éveillé.",
     "inhibit-idle-label": "Garder éveillé",
-    "no-battery-detected": "Aucune batterie détectée.",
+    "no-battery-detected": "Aucune batterie détectée",
     "panel-title": "Batterie",
-    "plugged-in": "Branché.",
+    "plugged-in": "Branché",
     "power-profile": "Profil d’alimentation",
-    "time-left": "Temps restant : {time}.",
-    "time-until-full": "Temps jusqu'à charge complète : {time}."
+    "time-left": "Temps restant : {time}",
+    "time-until-full": "Temps jusqu'à charge complète : {time}"
   },
   "bluetooth": {
     "panel": {
@@ -453,6 +472,14 @@
   },
   "clock": {
     "tooltip": "Ouvrir le calendrier"
+  },
+  "common": {
+    "add": "Ajouter",
+    "apply": "Postuler",
+    "cancel": "Annuler",
+    "check-settings": "Vérifier les paramètres pour plus de détails.",
+    "close": "Fermer",
+    "save": "Enregistrer"
   },
   "context-menu": {
     "activate-app": "Activer {app}",
@@ -925,7 +952,7 @@
           "label": "Densité de la barre"
         },
         "floating": {
-          "description": "Affiche la barre sous forme de 'pilule' flottante.",
+          "description": "Afficher la barre sous forme de 'pilule' flottante.",
           "label": "Barre flottante"
         },
         "margins": {
@@ -935,7 +962,7 @@
           "vertical": "Verticale"
         },
         "outer-corners": {
-          "description": "Affiche des coins incurvés vers l'extérieur sur la barre.",
+          "description": "Afficher des coins incurvés vers l'extérieur sur la barre.",
           "label": "Coins extérieurs"
         },
         "position": {
@@ -970,7 +997,7 @@
       },
       "widgets": {
         "section": {
-          "description": "Faites glisser et déposez les widgets pour les réorganiser. Les badges indiquent l'utilisation : [G]auche, [C]entre, [D]roite.",
+          "description": "Faites glisser les widgets pour modifier leur ordre. Utilisez le menu contextuel (clic droit) pour transférer les widgets entre les sections ou les supprimer.",
           "label": "Positionnement des widgets"
         }
       }
@@ -1229,7 +1256,7 @@
           "cancel": "Annuler"
         },
         "section": {
-          "description": "Configurer et gérer les widgets de raccourcis.",
+          "description": "Faites glisser les widgets pour modifier leur ordre. Utilisez le menu contextuel (clic droit) pour transférer des widgets entre les sections ou les supprimer.",
           "label": "Widgets de raccourcis"
         },
         "sectionLeft": "Gauche",
@@ -1479,6 +1506,10 @@
           "description": "Afficher les éléments dans une grille au lieu d'une liste.",
           "label": "Vue grille"
         },
+        "show-categories": {
+          "description": "Afficher les onglets de catégories pour filtrer les applications.",
+          "label": "Afficher les catégories"
+        },
         "position": {
           "description": "Choisissez où le panneau du lanceur apparaît.",
           "label": "Position"
@@ -1519,7 +1550,7 @@
       },
       "date-time": {
         "12hour-format": {
-          "description": "Affiche l'heure au format 12 heures sur l'écran de verrouillage et dans le calendrier. L'horloge de la barre possède ses propres paramètres.",
+          "description": "Afficher l'heure au format 12 heures sur l'écran de verrouillage et dans le calendrier. L'horloge de la barre possède ses propres paramètres.",
           "label": "Utiliser le format horaire de 12 heures"
         },
         "first-day-of-week": {
@@ -1540,7 +1571,7 @@
           "label": "Utiliser une horloge de style analogique."
         },
         "week-numbers": {
-          "description": "Affiche la semaine de l'année (ex: Semaine 38) dans le calendrier.",
+          "description": "Afficher la semaine de l'année (ex: Semaine 38) dans le calendrier.",
           "label": "Afficher les numéros de semaine"
         }
       },
@@ -1570,7 +1601,7 @@
           "label": "Météo"
         },
         "show-effects": {
-          "description": "Affiche des effets visuels supplémentaires (comme la pluie, la neige ou la foudre) sur la carte météo.",
+          "description": "Afficher des effets visuels supplémentaires (comme la pluie, la neige ou la foudre) sur la carte météo.",
           "label": "Afficher les effets météorologiques"
         },
         "show-in-calendar": {
@@ -1733,7 +1764,7 @@
           "label": "Touches de verrouillage"
         },
         "section": {
-          "description": "Sélectionnez les événements qui déclenchent l'OSD. Si aucun événement n'est sélectionné, tous les événements disponibles déclencheront l'OSD.",
+          "description": "Sélectionnez les événements qui déclenchent l'OSD.",
           "label": "Événements de déclenchement OSD"
         },
         "volume": {
@@ -1741,6 +1772,75 @@
           "label": "Volume de sortie"
         }
       }
+    },
+    "plugins": {
+      "available": {
+        "description": "Parcourir et installer des plugins à partir des sources configurées.",
+        "label": "Plugins disponibles",
+        "no-plugins-description": "Vérifiez les sources de vos plugins ou actualisez la liste.",
+        "no-plugins-label": "Aucun plugin disponible."
+      },
+      "filter": {
+        "all": "Tout",
+        "downloaded": "Téléchargé",
+        "not-downloaded": "Non téléchargé"
+      },
+      "install": "Installer",
+      "install-error": "Échec de l'installation : {error}",
+      "install-success": "Installation de {plugin} réussie.",
+      "installed": {
+        "description": "Gérer et configurer tous les plugins installés localement.",
+        "label": "Plugins installés",
+        "no-plugins-description": "Installez les extensions depuis la section Extensions disponibles ci-dessous.",
+        "no-plugins-label": "Aucun plugin installé"
+      },
+      "installing": "Installation de {plugin}...",
+      "plugin-settings-title": "Paramètres de {plugin}",
+      "refresh": {
+        "refreshing": "Actualisation de la liste des plugins...",
+        "tooltip": "Actualiser les extensions disponibles"
+      },
+      "settings": {
+        "tooltip": "Paramètres du plugin"
+      },
+      "settings-error-not-loaded": "Plugin non chargé",
+      "settings-saved": "Paramètres du plugin enregistrés",
+      "sources": {
+        "add-custom": "Ajouter un dépôt personnalisé",
+        "add-dialog": {
+          "description": "Ajouter un dépôt GitHub comme source de plugin.",
+          "error": "Échec de l'ajout de la source du plugin.",
+          "name": "Nom du dépôt",
+          "name-placeholder": "Mes extensions personnalisées",
+          "success": "Source du plugin ajoutée avec succès.",
+          "title": "Ajouter la source du plugin",
+          "url": "URL du dépôt"
+        },
+        "description": "Gérer les dépôts de plugins à partir desquels les plugins sont téléchargés.",
+        "label": "Sources du plugin",
+        "placeholder": "Mon dépôt cool",
+        "remove": {
+          "tooltip": "Supprimer la source du plugin"
+        }
+      },
+      "title": "Modules d'extension",
+      "uninstall": "Désinstaller",
+      "uninstall-dialog": {
+        "description": "Êtes-vous sûr de vouloir désinstaller {plugin} ? Cette action supprimera toutes les données du plugin.",
+        "title": "Désinstaller le plugin"
+      },
+      "uninstall-error": "Échec de la désinstallation : {error}",
+      "uninstall-success": "{plugin} a été désinstallé(e) avec succès.",
+      "uninstalling": "Désinstallation de {plugin}...",
+      "update": "Mise à jour",
+      "update-all": "Mettre à jour tout ({count})",
+      "update-all-success": "Tous les plugins ont été mis à jour avec succès.",
+      "update-available": "{count} mise(s) à jour de plugin(s) disponible(s)",
+      "update-error": "Échec de la mise à jour du plugin : {plugin} : {error}",
+      "update-incompatible": "Nécessite Noctalia v{version} ou une version ultérieure.",
+      "update-success": "Mise à jour du plugin {plugin} vers la version {version}.",
+      "update-version": "v{actuel} → v{nouveau}",
+      "updating": "Mise à jour de {plugin}..."
     },
     "screen-recorder": {
       "audio": {
@@ -2187,7 +2287,7 @@
     "noctalia-performance": {
       "disabled": "Mode performance désactivé",
       "enabled": "Mode performance activé",
-      "label": "Performance de Noctalia"
+      "label": "Noctalia Performance"
     },
     "power-profile": {
       "changed": "Profil d'alimentation changé",

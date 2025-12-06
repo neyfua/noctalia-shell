@@ -58,6 +58,14 @@
         "low-battery-threshold": {
           "description": "Warnung anzeigen, wenn Batterie unter diesen Prozentsatz fällt.",
           "label": "Schwellenwert für niedrigen Batteriestand"
+        },
+        "show-noctalia-performance": {
+          "description": "Zeige den Noctalia-Leistungsmodus-Schalter im Batterie-Panel an.",
+          "label": "Noctalia-Performance-Schalter anzeigen"
+        },
+        "show-power-profile": {
+          "description": "Zeige die Auswahl des Energieprofils im Batterie-Panel an.",
+          "label": "Energieprofil-Steuerung anzeigen"
         }
       },
       "brightness": {
@@ -131,10 +139,21 @@
           "label": "Befehlsausgabe anzeigen",
           "stream-description": "Geben Sie einen Befehl ein, der kontinuierlich ausgeführt werden soll."
         },
+        "hide-mode": {
+          "description": "Steuert die Sichtbarkeit des Widgets, wenn der Befehl keine Ausgabe hat.",
+          "label": "Ausblendmodus",
+          "expandWithOutput": "Mit Ausgabe erweitern",
+          "alwaysExpanded": "Immer erweitert",
+          "maxTransparent": "Maximal erweitert aber transparent"
+        },
         "dynamic-text": "Dynamischer Text",
         "icon": {
           "description": "Symbol aus der Bibliothek auswählen.",
           "label": "Symbol"
+        },
+        "show-icon": {
+          "description": "Schaltet die Sichtbarkeit des Widget-Symbols um.",
+          "label": "Symbol anzeigen"
         },
         "left-click": {
           "description": "Befehl, der ausgeführt wird, wenn die Schaltfläche links angeklickt wird.",
@@ -372,20 +391,20 @@
   "battery": {
     "battery-level": "Akkustand",
     "brightness": "Helligkeit",
-    "charging": "Wird geladen.",
-    "charging-rate": "Laderate: {rate} W.",
-    "discharging": "Wird entladen.",
-    "discharging-rate": "Entladerate: {rate} W.",
+    "charging": "Wird geladen",
+    "charging-rate": "Laderate: {rate} W",
+    "discharging": "Wird entladen",
+    "discharging-rate": "Entladerate: {rate} W",
     "health": "Zustand: {percent}%",
-    "idle": "Leerlauf.",
+    "idle": "Leerlauf",
     "inhibit-idle-description": "Hält das System wach.",
     "inhibit-idle-label": "Wach halten",
-    "no-battery-detected": "Keine Batterie erkannt.",
+    "no-battery-detected": "Keine Batterie erkannt",
     "panel-title": "Akku",
-    "plugged-in": "Angeschlossen.",
+    "plugged-in": "Angeschlossen",
     "power-profile": "Energieprofil",
-    "time-left": "Verbleibende Zeit: {time}.",
-    "time-until-full": "Verbleibende Ladezeit: {time}."
+    "time-left": "Verbleibende Zeit: {time}",
+    "time-until-full": "Verbleibende Ladezeit: {time}"
   },
   "bluetooth": {
     "panel": {
@@ -453,6 +472,14 @@
   },
   "clock": {
     "tooltip": "Kalender öffnen"
+  },
+  "common": {
+    "add": "Hinzufügen",
+    "apply": "Anwenden",
+    "cancel": "Abbrechen",
+    "check-settings": "Überprüfe die Einstellungen für Details.",
+    "close": "Schließen",
+    "save": "Speichern"
   },
   "context-menu": {
     "activate-app": "{app} aktivieren",
@@ -935,7 +962,7 @@
           "vertical": "Vertikal"
         },
         "outer-corners": {
-          "description": "Zeigt nach außen gewölbte Ecken auf der Leiste an.",
+          "description": "Nach außen gewölbte Ecken auf der Leiste anzeigen.",
           "label": "Äußere Ecken"
         },
         "position": {
@@ -970,7 +997,7 @@
       },
       "widgets": {
         "section": {
-          "description": "Widgets per Drag & Drop neu anordnen. Symoble zeigen die Verwendung an: [L]inks, [M]itte, [R]echts.",
+          "description": "Ziehen Sie Widgets, um ihre Reihenfolge zu ändern. Verwenden Sie das Rechtsklick-Menü, um Widgets zwischen Abschnitten zu verschieben oder sie zu entfernen.",
           "label": "Widget-Positionierung"
         }
       }
@@ -1060,7 +1087,7 @@
       "templates": {
         "compositors": {
           "description": "Compositor-Theming.",
-          "label": "Compositor/innen",
+          "label": "Compositor",
           "niri": {
             "description": "Schreibe {filepath}. Benötigt niri v25.11+",
             "description-missing": "Benötigt die Installation von {app}"
@@ -1229,7 +1256,7 @@
           "cancel": "Abbrechen"
         },
         "section": {
-          "description": "Konfigurieren und verwalten Sie die Verknüpfungs-Widgets.",
+          "description": "Ziehen Sie Widgets, um ihre Reihenfolge zu ändern. Verwenden Sie das Rechtsklick-Menü, um Widgets zwischen Abschnitten zu verschieben oder sie zu entfernen.",
           "label": "Widgets für Kurzbefehle"
         },
         "sectionLeft": "Links",
@@ -1460,7 +1487,7 @@
           "label": "Hintergrund-Transparenz"
         },
         "clip-preview": {
-          "description": "Zeigt eine Vorschau des Inhalts der Zwischenablage an, wenn der Befehl >clip verwendet wird.",
+          "description": "Zeige eine Vorschau des Inhalts der Zwischenablage an, wenn der Befehl >clip verwendet wird.",
           "label": "Clip-Vorschau aktivieren"
         },
         "clipboard-history": {
@@ -1478,6 +1505,10 @@
         "grid-view": {
           "description": "Elemente in einem Raster statt in einer Liste anzeigen.",
           "label": "Rasteransicht"
+        },
+        "show-categories": {
+          "description": "Kategorienregisterkarten zum Filtern von Anwendungen anzeigen.",
+          "label": "Kategorien anzeigen"
         },
         "position": {
           "description": "Wählen Sie, wo das Starter-Panel erscheint.",
@@ -1519,7 +1550,7 @@
       },
       "date-time": {
         "12hour-format": {
-          "description": "Zeigt die Uhrzeit im 12-Stunden-Format auf dem Sperrbildschirm und im Kalender an. Die Uhr in der Statusleiste hat eigene Einstellungen.",
+          "description": "Zeige die Uhrzeit im 12-Stunden-Format auf dem Sperrbildschirm und im Kalender an. Die Uhr in der Statusleiste hat eigene Einstellungen.",
           "label": "12-Stunden-Zeitformat benutzen"
         },
         "first-day-of-week": {
@@ -1540,7 +1571,7 @@
           "label": "Analoge Uhr verwenden"
         },
         "week-numbers": {
-          "description": "Zeigt die Kalenderwochen an (z.B. Woche 38).",
+          "description": "Zeige die Woche des Jahres (z.B. Woche 38) im Kalender an.",
           "label": "Wochennummern anzeigen"
         }
       },
@@ -1570,7 +1601,7 @@
           "label": "Wetter"
         },
         "show-effects": {
-          "description": "Zeigt zusätzliche visuelle Effekte (wie Regen, Schnee oder Blitze) auf der Wetterkarte an.",
+          "description": "Zeige zusätzliche visuelle Effekte (wie Regen, Schnee oder Blitze) auf der Wetterkarte an.",
           "label": "Wettereffekte anzeigen"
         },
         "show-in-calendar": {
@@ -1733,7 +1764,7 @@
           "label": "Feststelltasten"
         },
         "section": {
-          "description": "Wählen Sie die Ereignisse aus, die das OSD auslösen. Wenn keine Ereignisse ausgewählt werden, lösen alle verfügbaren Ereignisse das OSD aus.",
+          "description": "Wählen Sie die Ereignisse aus, die das OSD auslösen.",
           "label": "OSD-Auslöseereignisse"
         },
         "volume": {
@@ -1741,6 +1772,75 @@
           "label": "Ausgangslautstärke"
         }
       }
+    },
+    "plugins": {
+      "available": {
+        "description": "Plugins aus konfigurierten Quellen durchsuchen und installieren.",
+        "label": "Verfügbare Plugins",
+        "no-plugins-description": "Überprüfen Sie Ihre Plugin-Quellen oder aktualisieren Sie die Liste.",
+        "no-plugins-label": "Keine Plugins verfügbar"
+      },
+      "filter": {
+        "all": "Alle",
+        "downloaded": "Heruntergeladen",
+        "not-downloaded": "Nicht heruntergeladen"
+      },
+      "install": "Installieren",
+      "install-error": "Installation fehlgeschlagen: {error}",
+      "install-success": "{plugin} erfolgreich installiert",
+      "installed": {
+        "description": "Alle lokal installierten Plugins verwalten und konfigurieren.",
+        "label": "Installierte Plugins",
+        "no-plugins-description": "Installieren Sie Plugins aus dem Abschnitt \"Verfügbare Plugins\" unten.",
+        "no-plugins-label": "Keine Plugins installiert"
+      },
+      "installing": "{Plugin} wird installiert...",
+      "plugin-settings-title": "{plugin} Einstellungen",
+      "refresh": {
+        "refreshing": "Aktualisiere Plugin-Liste...",
+        "tooltip": "Verfügbare Plugins aktualisieren"
+      },
+      "settings": {
+        "tooltip": "Plugin-Einstellungen"
+      },
+      "settings-error-not-loaded": "Plugin nicht geladen",
+      "settings-saved": "Plugin-Einstellungen gespeichert",
+      "sources": {
+        "add-custom": "Benutzerdefiniertes Repository hinzufügen",
+        "add-dialog": {
+          "description": "Ein GitHub-Repository als Plugin-Quelle hinzufügen.",
+          "error": "Fehler beim Hinzufügen der Plugin-Quelle",
+          "name": "Repository-Name",
+          "name-placeholder": "Meine benutzerdefinierten Plugins",
+          "success": "Plugin-Quelle erfolgreich hinzugefügt",
+          "title": "Plugin-Quelle hinzufügen",
+          "url": "Repository-URL"
+        },
+        "description": "Plugin-Repositories verwalten, von denen Plugins heruntergeladen werden.",
+        "label": "Plugin-Quellen",
+        "placeholder": "Mein cooles Repository",
+        "remove": {
+          "tooltip": "Plugin-Quelle entfernen"
+        }
+      },
+      "title": "Plugins",
+      "uninstall": "Deinstallieren",
+      "uninstall-dialog": {
+        "description": "Sind Sie sicher, dass Sie {plugin} deinstallieren möchten? Dadurch werden alle Plugin-Daten entfernt.",
+        "title": "Plugin deinstallieren"
+      },
+      "uninstall-error": "Deinstallation fehlgeschlagen: {error}",
+      "uninstall-success": "{plugin} wurde erfolgreich deinstalliert.",
+      "uninstalling": "{Plugin} wird deinstalliert...",
+      "update": "Aktualisierung",
+      "update-all": "Alle aktualisieren ({count})",
+      "update-all-success": "Alle Plugins wurden erfolgreich aktualisiert.",
+      "update-available": "{count} Plugin-Update(s) verfügbar",
+      "update-error": "Fehler beim Aktualisieren des Plugins: {plugin}: {error}",
+      "update-incompatible": "Benötigt Noctalia v{version} oder höher",
+      "update-success": "{plugin} wurde auf v{version} aktualisiert",
+      "update-version": "v{aktuell} → v{neu}",
+      "updating": "{Plugin} wird aktualisiert..."
     },
     "screen-recorder": {
       "audio": {
@@ -2187,7 +2287,7 @@
     "noctalia-performance": {
       "disabled": "Leistungsmodus deaktiviert",
       "enabled": "Leistungsmodus aktiviert",
-      "label": "Noctalia-Aufführung"
+      "label": "Noctalia-Performance"
     },
     "power-profile": {
       "changed": "Energieprofil geändert",
